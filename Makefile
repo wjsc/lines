@@ -1,26 +1,5 @@
-C=gcc -o
-SG= soporteGeneral.c
-central:
-	$(C) cen central.c $(SG) soporte.c 
-celular:
-	$(C) cel celular.c soporteCelular.c $(SG)
-cargador:
-	$(C) car cargador.c soporteCargador.c $(SG)
-telefono:
-	$(C) tel $(SG) telefono.c soporteTelefono.c
-centralLinea:
-	$(C) cenL $(SG) soporteCentralLinea.c centralLinea.c	
-limpiar:
-	clear
-log:
-	rm *.txt
-
-all: central celular cargador telefono centralLinea
-	
-clean:
-	rm cen
-	rm cel
-	rm car
-	rm tel
-	rm cenL
-	rm *.txt
+gcc -o cen central.c soporteGeneral.c soporte.c
+gcc -o cel celular.c soporteCelular.c soporteGeneral.c
+gcc -o car cargador.c soporteCargador.c soporteGeneral.c
+gcc -o tel soporteGeneral.c telefono.c soporteTelefono.c
+gcc -o cenL soporteGeneral.c soporteCentralLinea.c centralLinea.c
